@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>無垠 WÚYÍN｜沉浸式新媒體與生成設計工作室</title>
+<meta name="description" content="無垠 WÚYÍN 是一間專注於沉浸式體驗、生成藝術與 WebGL 互動的新媒體設計工作室。我們以 Three.js、即時運算與資料視覺化，為品牌打造會呼吸的數位場域。">
+<meta name="keywords" content="沉浸式體驗設計, 生成藝術, WebGL, Three.js, 新媒體藝術, 互動裝置, 數位展演, 資料視覺化, 生成設計">
+<meta name="author" content="無垠 WÚYÍN STUDIO">
+<link rel="canonical" href="https://izzo24.github.io/wuyin-studio/">
+<meta name="theme-color" content="#050507">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:site_name" content="無垠 WÚYÍN STUDIO">
+<meta property="og:title" content="無垠 WÚYÍN｜沉浸式新媒體與生成設計工作室">
+<meta property="og:description" content="以 Three.js、即時運算與資料視覺化，為品牌打造會呼吸的沉浸式數位場域。">
+<meta property="og:url" content="https://izzo24.github.io/wuyin-studio/">
+<meta property="og:image" content="https://izzo24.github.io/wuyin-studio/images/hero.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="無垠 WÚYÍN｜沉浸式新媒體與生成設計工作室">
+<meta name="twitter:description" content="以 Three.js、即時運算與資料視覺化，打造會呼吸的沉浸式數位場域。">
+<meta name="twitter:image" content="https://izzo24.github.io/wuyin-studio/images/hero.webp">
+
+<link rel="icon" type="image/svg+xml" href="./logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;500;700&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "無垠 WÚYÍN STUDIO",
+  "alternateName": "WUYIN STUDIO",
+  "url": "https://izzo24.github.io/wuyin-studio/",
+  "logo": "https://izzo24.github.io/wuyin-studio/logo.svg",
+  "image": "https://izzo24.github.io/wuyin-studio/images/hero.webp",
+  "description": "專注於沉浸式體驗、生成藝術與 WebGL 互動的新媒體設計工作室。",
+  "email": "hello@wuyin.studio",
+  "areaServed": "TW",
+  "knowsAbout": ["沉浸式體驗設計", "生成藝術", "WebGL", "Three.js", "新媒體藝術", "資料視覺化"],
+  "sameAs": ["https://izzo24.github.io/wuyin-studio/"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "無垠 WÚYÍN STUDIO",
+  "url": "https://izzo24.github.io/wuyin-studio/",
+  "inLanguage": "zh-Hant",
+  "publisher": { "@type": "Organization", "name": "無垠 WÚYÍN STUDIO" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "無垠 WÚYÍN 精選作品",
+  "itemListElement": [
+    { "@type": "CreativeWork", "position": 1, "name": "流形・資料地景", "url": "https://izzo24.github.io/wuyin-studio/#works", "image": "https://izzo24.github.io/wuyin-studio/images/work-terrain.webp" },
+    { "@type": "CreativeWork", "position": 2, "name": "墨流・即時流體", "url": "https://izzo24.github.io/wuyin-studio/#works", "image": "https://izzo24.github.io/wuyin-studio/images/work-fluid.webp" },
+    { "@type": "CreativeWork", "position": 3, "name": "晶格・參數結構", "url": "https://izzo24.github.io/wuyin-studio/#works", "image": "https://izzo24.github.io/wuyin-studio/images/work-voronoi.webp" }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#philosophy">跳至主要內容</a>
+
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="無垠 WÚYÍN 首頁">
+    <svg class="brand-mark" viewBox="0 0 40 40" width="34" height="34" role="img" aria-label="無垠標誌">
+      <circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="1.1" opacity="0.55"/>
+      <path d="M5 24 C12 12 28 12 35 24" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M5 20 C12 28 28 28 35 20" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.75"/>
+      <circle cx="20" cy="20" r="2.1" fill="currentColor"/>
+    </svg>
+    <span class="brand-text">無垠 <em>WÚYÍN</em></span>
+  </a>
+  <nav class="site-nav" aria-label="主要導覽">
+    <a href="#philosophy">理念</a>
+    <a href="#works">作品</a>
+    <a href="#services">服務</a>
+    <a href="#contact">聯絡</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <p class="eyebrow">沉浸式新媒體 · 生成設計工作室</p>
+      <h1 id="hero-title">在無垠的場域中，<br>讓資料生長為光。</h1>
+      <p class="hero-sub">無垠 WÚYÍN 以即時運算、生成藝術與 WebGL 技術，將抽象的資料與概念，轉化為可被身體感知的數位空間。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#works">觀看作品</a>
+        <a class="btn btn-ghost" href="#contact">展開合作</a>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"><span></span>向下捲動</div>
+  </section>
+
+  <section class="section philosophy" id="philosophy" aria-labelledby="philosophy-title">
+    <div class="container narrow">
+      <p class="section-index">01 — 理念</p>
+      <h2 id="philosophy-title">設計，是替資料找到呼吸的方式</h2>
+      <p class="lead">我們相信數位介面不該只是靜止的版面，而是一座持續生長、回應觀者的場域。每一次滑動、每一次停留，都是與作品共同完成的一次運算。</p>
+      <div class="pillars">
+        <article class="pillar">
+          <h3>即時生成</h3>
+          <p>以參數化與雜訊演算法驅動畫面，每位觀者看到的都是獨一無二、不會重複的瞬間，而非預先錄製的動畫。</p>
+        </article>
+        <article class="pillar">
+          <h3>感官敘事</h3>
+          <p>從光、密度到節奏，我們以視覺語彙鋪陳情緒曲線，讓品牌訊息在沉浸的氛圍中自然被記住。</p>
+        </article>
+        <article class="pillar">
+          <h3>技術為骨</h3>
+          <p>Three.js、GLSL 著色器與即時資料串流是我們的基礎建設，效能與美學在每一幀裡同時被照顧。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section works" id="works" aria-labelledby="works-title">
+    <div class="container">
+      <p class="section-index">02 — 作品</p>
+      <h2 id="works-title">精選沉浸式作品</h2>
+      <p class="lead">從互動官網到數位展演現場，以下是無垠近期以生成手法完成的數位場域。</p>
+      <div class="work-grid">
+        <article class="work-card">
+          <figure>
+            <img src="./images/work-terrain.webp" alt="以等高線流動構成的單色生成資料地景" width="800" height="800" loading="lazy">
+          </figure>
+          <div class="work-body">
+            <h3>流形・資料地景</h3>
+            <p class="work-meta">即時 WebGL · 資料視覺化</p>
+            <p>將氣候時序資料映射為連綿起伏的等高線地形，觀者拖曳即可在時間軸上漫遊一整年的變化。</p>
+          </div>
+        </article>
+        <article class="work-card">
+          <figure>
+            <img src="./images/work-fluid.webp" alt="黑色空間中白色細絲流動的即時流體生成藝術" width="800" height="800" loading="lazy">
+          </figure>
+          <div class="work-body">
+            <h3>墨流・即時流體</h3>
+            <p class="work-meta">GLSL 著色器 · 互動裝置</p>
+            <p>為當代水墨特展打造的即時流體裝置，觀眾的動作化為墨色筆觸，在巨幕上彼此暈染、消散。</p>
+          </div>
+        </article>
+        <article class="work-card">
+          <figure>
+            <img src="./images/work-voronoi.webp" alt="懸浮於純黑空間中的白色參數化晶格光結構" width="800" height="800" loading="lazy">
+          </figure>
+          <div class="work-body">
+            <h3>晶格・參數結構</h3>
+            <p class="work-meta">生成設計 · 動態識別</p>
+            <p>以 Voronoi 演算法生成的品牌動態識別系統，讓標誌依場景自由生長，卻始終維持一致的視覺語法。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <p class="section-index">03 — 服務</p>
+      <h2 id="services-title">我們提供的能力</h2>
+      <div class="service-list">
+        <article class="service">
+          <span class="service-no">/01</span>
+          <h3>沉浸式互動網站</h3>
+          <p>以 Three.js 與 WebGL 打造會回應觀者的品牌官網與產品體驗，兼顧敘事張力與載入效能。</p>
+        </article>
+        <article class="service">
+          <span class="service-no">/02</span>
+          <h3>生成藝術裝置</h3>
+          <p>為展覽、快閃與品牌空間設計即時生成的視覺裝置，串接感測器與現場資料，創造獨一無二的現場。</p>
+        </article>
+        <article class="service">
+          <span class="service-no">/03</span>
+          <h3>數位展演與投影</h3>
+          <p>從概念、視覺到現場技術整合，提供大型投影、舞台視覺與即時運算的完整數位展演製作。</p>
+        </article>
+        <article class="service">
+          <span class="service-no">/04</span>
+          <h3>動態品牌識別</h3>
+          <p>以參數化系統打造能持續生長的品牌動態識別，讓標誌、字體與色彩在不同載體間保持一致。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div class="container narrow">
+      <p class="section-index">04 — 聯絡</p>
+      <h2 id="contact-title">讓我們一起，把概念變成場域</h2>
+      <p class="lead">無論是一場展演、一個品牌官網，或一件尚未命名的實驗，歡迎把你的想像帶來。</p>
+      <div class="contact-grid">
+        <div>
+          <p class="contact-label">合作洽詢</p>
+          <a class="contact-link" href="mailto:hello@wuyin.studio">hello@wuyin.studio</a>
+        </div>
+        <div>
+          <p class="contact-label">工作室</p>
+          <p class="contact-text">台北市 · 大同區<br>週一至週五 10:00–19:00</p>
+        </div>
+        <div>
+          <p class="contact-label">領域</p>
+          <p class="contact-text">沉浸式體驗 · 生成藝術<br>新媒體裝置 · 動態識別</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-text">無垠 <em>WÚYÍN</em></span>
+      <p>沉浸式新媒體與生成設計工作室</p>
+    </div>
+    <nav class="footer-nav" aria-label="頁尾導覽">
+      <a href="#philosophy">理念</a>
+      <a href="#works">作品</a>
+      <a href="#services">服務</a>
+      <a href="#contact">聯絡</a>
+    </nav>
+    <p class="footer-fine">© 2026 無垠 WÚYÍN STUDIO． 由 橋序創研 BridgeSeqLab 製作．</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="./main.js"></script>
+</body>
+</html>
